@@ -1,15 +1,49 @@
-Welcome to your new dbt project!
+# 🥪 Jaffle Shop Data Transformation
 
-### Using the starter project
+Ce projet est une implémentation moderne du célèbre pipeline **Jaffle Shop**. Il transforme des données de vente brutes en modèles analytiques via **dbt Cloud** et **Google BigQuery**.
 
-Try running the following commands:
-- dbt run
-- dbt test
+---
 
+## 🚀 Vue d'ensemble
+L'objectif est de transformer trois sources de données brutes :
+* **Données Sources :** Clients, Commandes et Paiements (CSV).
+* **Transformation :** Nettoyage (Staging) et Agrégation (Marts).
+* **Destination :** BigQuery.
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [dbt community](https://getdbt.com/community) to learn from other analytics engineers
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+---
+
+## 🛠 Stack Technique
+* **Entrepôt :** Google BigQuery
+* **Transformation :** dbt Cloud (Fusion 2.0)
+* **Contrôle de version :** GitHub
+
+---
+
+## 🏗 Structure du Projet
+
+* **models/staging/** : Nettoyage des données brutes (`stg_customers`, `stg_orders`).
+* **models/marts/** : Tables finales pour la BI (`dim_customers`).
+* **seeds/** : Fichiers sources CSV.
+
+---
+
+## 🚦 Guide de démarrage rapide
+
+### 1. Préparation
+`dbt seed`
+
+### 2. Exécution
+`dbt run`
+
+### 3. Tests
+`dbt test`
+
+---
+
+## 📈 Modèles Principaux
+* **dim_customers** : Vision client 360° avec calcul du nombre de commandes.
+* **stg_jaffle_shop** : Couche de staging pour normaliser les données d'entrée.
+
+---
+
+> **💡 Note :** Projet migré de AWS/Redshift vers BigQuery pour une meilleure fluidité.
